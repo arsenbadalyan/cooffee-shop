@@ -1,0 +1,13 @@
+@import '../../../../styles/colors.scss';
+
+.buttonContainer {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.path {
+  stroke: $primary-beige;
+}

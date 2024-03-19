@@ -1,0 +1,207 @@
+@import '../../../styles/colors.scss';
+
+.navContainer {
+  position: fixed;
+  top: 0px;
+  z-index: 888;
+
+  // Center container horizontally 
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 86vw;
+  padding: 5px 2vw 5px 2vw;
+  border-radius: 3px 3px 20px 20px;
+
+  background-color: $primary-navy;
+
+  transition: all 400ms;
+
+  &Shadow {
+    @extend .navContainer;
+    opacity: 0.95;
+    box-shadow: var(--shadow-elevation);
+  }
+
+  &Hidden {
+    @extend .navContainer;
+    top: -60px;
+    opacity: 0;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    width: 90vw;
+  }
+
+  .logoContainer {
+    // Keep middle (social icons) centered
+    flex: 1;
+    flex-basis: 0;
+    z-index: 10;
+
+    .logo {
+      color: $primary-beige;
+      letter-spacing: -0.03em;
+      font-size: 50px;
+      font-weight: 700;
+
+      transition: all 400ms;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 38px;
+      }
+    }
+  }
+  
+
+  .socialIconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .socialIcon {
+      display: flex;
+      align-items: center;
+      
+      cursor: pointer;
+      color: $primary-beige;
+      font-size: 24px;
+
+      @media only screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+  }
+
+  .navRoutesContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:40px;
+
+    // Keep middle (social icons) centered
+    flex: 1;
+    flex-basis: 0;
+
+    transition: all 400ms;
+    
+    @media only screen and (max-width: 1199px) {
+      gap:30px;
+    }
+
+    @media only screen and (max-width: 992px) {
+      display: none;
+    }
+
+    .navRoute {
+      cursor: pointer;
+      color: $primary-beige;
+      font-size: 16px;
+    }
+  }
+}
+
+.navItem {
+  
+  cursor: pointer;
+  color: $primary-beige;
+  font-size: 16px;
+  position: relative;
+
+  @media only screen and (max-width: 992px) {
+    font-size: 18px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 14px;
+  }
+}
+
+.navUnderline {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  height: 2px;
+  border-radius: 15px; 
+  background: $primary-beige;
+
+  @media only screen and (max-width: 992px) {
+    width: 3px;
+    height: 100%;
+    left: -20px;
+    top: 0%;
+    margin-top: 0px;
+  }
+}
+
+.menuContainer {
+  display: none;
+
+  @media only screen and (max-width: 992px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropDownContainer {
+    position: absolute;
+    right: 0px;
+    background-color: $primary-navy;
+    border-radius: 30px;
+    height: 400px;
+    padding: 20px;
+    width: 30vw;
+    transition: all 400ms;
+
+    @media only screen and (max-width: 768px) {
+      width: 40vw;
+    }
+
+    @media only screen and (max-width: 576px) {
+      height: 350px;
+      width: 45vw;
+    }
+
+    .dropdownItemContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      transition: all 400ms;
+
+      .socialIconContainerSmall {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        color: $primary-beige;
+        font-size: 24px;
+        margin-bottom: 10px;
+        transition: all 400ms;
+
+        @media only screen and (max-width: 576px) {
+          font-size: 21px;
+        }
+      }
+
+      .navRoutesContainerSmall {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.hideElement {
+  display: none;
+}

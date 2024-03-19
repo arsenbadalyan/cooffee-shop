@@ -1,0 +1,10 @@
+@import '../../styles/colors.scss';
+
+// Fix footer to the bottom of the page
+.layoutContainer {
+  min-height: 100vh;
+
+  .contentContainer {
+    flex: 1;
+  }
+}
